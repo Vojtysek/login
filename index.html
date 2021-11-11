@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://ez-css.now.sh" />
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body onload="">
+    <p class="copyrigt">©Vojtěch_Döme <br> 2021 </p>
+    <main id="app">
+      <h3>Sign Up</h3>
+      <form @submit.prevent="addUser"><br>
+        <label for="newUser">New User</label>
+        <input
+          v-model="newUser"
+          type="text"
+          name="newUser"
+          id="newUser"
+          placeholder="Username"
+          />
+        <input
+          v-model="newPass"
+          type="password"
+          name="newPass"
+          id="newPass"
+          value=""
+          placeholder="Password"
+          />
+				  <button id="postButton" @click="postFetch()" onclick="location.reload()">Add</button>
+				  <h1 data.data></h1>
+        </form>
+        <button id="deleteButton" @click="deleteAllFetch()">Delete All</button>
+        <ol>
+				<li v-for="user in users">
+				 Username = {{ user.username }}
+    <br> Password = {{ user.password }}
+    <br> Identificator = {{ user._id }}
+    <br> Length Counter = {{ user._id.length }}
+    <!--<br><hr> Edit User:
+    <br> <input v-model="editUser" name="editUser" id="editUser" value="" placeholder="Edit Name"> <button id="editUserButton" @click="editUserFetch(user._id)">Change</button>
+    <br> <input v-model="editPass" name="editPass" id="editPass" value="" placeholder="Edit Password"> <button id="editPassButton" @click="editPassFetch(user._id)">Change</button>-->
+    <button id="deleteButton" @click="deleteFetch(user._id)">Delete</button>
+				</li>
+			  </ol>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="app.js" charset="utf-8"></script>
+		<script src="fetch.js" charset="utf-8"></script>
+  </body>
+</html>
