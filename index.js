@@ -11,7 +11,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 //Mongo
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Vojtysek:12345@userdb.jvqo8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true}, { useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://user:password@userdb.jvqo8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true}, { useUnifiedTopology: true });
 const db= mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection error:'));
 db.once('open', function() {
